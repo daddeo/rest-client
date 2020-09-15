@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Application {
-	public static final String apiURL = "http://localhost:8080/demo/webapi/check";
+	public static final String apiURL = "http://localhost:8080/services/rest/unique-email-address-check";
 	
 	public static void main(String[] args) {
 		final String[] addresses = {
@@ -17,7 +17,7 @@ public class Application {
 				"test.email+spam@gmail.com",
 				"testemail@gmail.com"
 		};
-/* another data set
+/*
 		final String[] addresses = {
 				"email@gmail.com",
 				"test.email@fetchrewards.com"
@@ -46,7 +46,6 @@ public class Application {
 			os.write(input.getBytes());
 			os.flush();
 
-			// HTTP_CREATED
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
 				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
 			}
